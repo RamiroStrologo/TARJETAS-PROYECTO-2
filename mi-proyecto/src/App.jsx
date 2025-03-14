@@ -15,21 +15,20 @@ function App() {
 
   return (
     <>
-      <Sparkles />
+      <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+        {/* Efecto de chispas */}
+        <Sparkles />
 
-      {/* ENCABEZADO FIJO */}
-      <header className="sticky top-0 z-20 bg-gradient-to-b from-pink-400 to-pink-200 text-white p-4 text-center flex justify-center flex-col w-full shadow-md">
-        <span>DANIELA</span>
-        <span>MIS 39 + 1</span>
-      </header>
+        {/* Encabezado siempre visible */}
+        <header className="sticky top-0 z-20 bg-gradient-to-b from-pink-400 to-pink-200 text-white p-4 text-center flex justify-center flex-col w-full shadow-md">
+          <span className="text-lg sm:text-xl md:text-2xl font-bold">
+            DANIELA
+          </span>
+          <span className="text-sm sm:text-lg md:text-xl">MIS 39 + 1</span>
+        </header>
 
-      {/* CONTENIDO PRINCIPAL */}
-      <div className="w-full bg-white shadow-md">
-        <div>
-          <img src="/img_prueba.jpg" alt="" className="w-full" />
-        </div>
-
-        <main className="flex-grow">
+        {/* Contenido principal */}
+        <main className="flex-grow p-4 md:p-6">
           <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-6">
             {cardsData.map((card, index) => (
               <Card1
@@ -42,6 +41,7 @@ function App() {
           </div>
         </main>
 
+        {/* Pie de página */}
         <footer className="bg-gradient-to-b from-pink-400 to-pink-200 text-white p-4 text-center">
           PIE DE PAGINA
         </footer>

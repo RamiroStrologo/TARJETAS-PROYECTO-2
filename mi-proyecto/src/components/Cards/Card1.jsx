@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Card = ({ image, text, index }) => {
+const Card1 = ({ image, text, index }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   // Detecta si la tarjeta está en el viewport
@@ -26,9 +26,7 @@ const Card = ({ image, text, index }) => {
   return (
     <div
       id={`card-${index}`}
-      className={`relative w-full max-w-[350px] h-[60vh] bg-white shadow-xl rounded-2xl p-4 flex ${
-        index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-      } items-center text-left transition-all duration-1000 ease-in-out ${
+      className={`relative w-full max-w-[350px] bg-white shadow-xl rounded-2xl p-4 flex flex-col md:flex-row items-center text-left transition-all duration-1000 ease-in-out ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
       }`}
     >
@@ -36,14 +34,15 @@ const Card = ({ image, text, index }) => {
       <img
         src={image}
         alt="Foto"
-        className="w-full h-full object-cover rounded-xl"
+        className="w-full md:w-1/2 h-auto object-cover rounded-xl"
       />
-      {/* Texto */}
-      <div className="w-full px-4 flex flex-col justify-center">
-        <p className="text-lg font-semibold">{text}</p>
+
+      {/* Contenedor del texto */}
+      <div className="w-full md:w-1/2 px-4 flex flex-col justify-center text-center md:text-left">
+        <p className="text-lg font-semibold break-words">{text}</p>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default Card1;
